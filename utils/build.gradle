@@ -1,18 +1,28 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
-version 'unspecified'
-
+group 'ru.clevertec'
+version '1.3.5'
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    implementation 'org.apache.commons:commons-lang3:3.10'
+
 }
 
-test {
+tasks.named('jar') {
+
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+
+}
+tasks.named('test') {
+
     useJUnitPlatform()
 }
