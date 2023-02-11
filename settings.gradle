@@ -11,4 +11,4 @@ rootProject.name = 'ClevertecTask2Gradle'
 include 'utils'
 include 'core'
 include 'api'
-
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
