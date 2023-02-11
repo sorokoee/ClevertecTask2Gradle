@@ -1,5 +1,8 @@
 allprojects{
+
     apply plugin: 'java'
+    group 'ru.clevertec'
+    version '1.0.0'
 
     repositories{
         mavenCentral()
@@ -8,8 +11,10 @@ allprojects{
 }
 
 subprojects{
+
     dependencies{
         testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+        implementation 'org.apache.commons:commons-lang3:3.10'
     }
     tasks.named('test') {
         // Use JUnit Platform for unit tests.
